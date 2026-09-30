@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medidor Kelvin IoT</title>
+  <style>
+    /* Tema Claro (Fondo Blanco) */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #ffffff;
+      color: #333333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      margin: 0;
+      min-height: 100vh;
+    }
+
+    /* Contenedor del Encabezado */
+    .header-container {
+      text-align: center;
+      max-width: 500px;
+      margin-bottom: 20px;
+    }
+
+    /* Estilo del Logo */
+    .logo {
+      max-width: 180px;
+      margin-bottom: 15px;
+    }
+
+    /* Mensaje de Bienvenida */
+    .welcome-msg {
+      font-size: 15px;
+      color: #555555;
+      margin-bottom: 15px;
+      line-height: 1.6;
+      background-color: #f8f9fa;
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid #eeeeee;
+    }
+
+    h2 {
+      color: #000000;
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+    }
+
+    /* Botón Interactivo de Conexión */
+    .status-btn {
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .status-btn.connected {
+      background-color: #28a745; /* Verde */
+    }
+
+    .status-btn.disconnected {
+      background-color: #dc3545; /* Rojo */
+    }
+
+    /* Contenedor de las Medidas */
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    /* Tarjetas de Medición (Blancas con sombra) */
+    .card {
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 25px 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      text-align: center;
+      border-left: 6px solid #0056b3; /* Borde Azul */
+    }
+
+    .card.battery {
+      border-left: 6px solid #d81b60; /* Borde Rojo/Rosa */
+    }
+
+    .label {
+      font-size: 14px;
+      color: #666666;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    /* Números Gigantes */
+    .value {
+      font-size: 48px;
+      font-weight: bold;
+      color: #0056b3;
+      margin: 10px 0;
+    }
+
+    .value.battery {
+      color: #d81b60;
+    }
+
+    /* Etiqueta inferior de Carga */
+    .status {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #856404;
+      background: #fff3cd;
+      padding: 8px 12px;
+      border-radius: 8px;
+      display: inline-block;
+      font-weight: bold;
+      border: 1px solid #ffeeba;
+    }
+
+    /* Footer con los Nombres */
+    .footer {
+      margin-top: auto;
+      padding-top: 30px;
+      padding-bottom: 20px;
+      text-align: center;
+      font-size: 14px;
+      color: #777777;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .footer p { 
+      margin: 5px 0; 
+      font-weight: bold;
+      color: #333333;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header-container">
+    <!-- Carga el logo desde la misma carpeta -->
+    <img src="logo.png" alt="Logo del Proyecto" class="logo">
+    
+    <div class="welcome-msg">
+      <strong>¡Bienvenido!</strong><br> Esta aplicación corresponde al equipo electrónico diseñado para medir resistencias menores a 1 Ω con conectividad IoT.
+    </div>
+    
+    <h2>MEDIDOR KELVIN</h2>
+
+    <!-- Botón que cambia al hacerle clic -->
+    <button id="connectionBtn" class="status-btn disconnected" onclick="toggleConnection()">
+      🔴 Verificando conexión al ESP32...
+    </button>
+  </div>
+  
+  <div class="container">
+    <div class="card">
+      <div class="label">Resistencia Bajo Prueba</div>
+      <div class="value" id="resValue">-- Ω</div> 
+    </div>
+
+    <div class="card battery">
+      <div class="label">Nivel de Batería</div>
+      <div class="value battery" id="batValue">-- %</div>
+      <div class="status" id="timeValue">Esperando datos del equipo...</div>
+    </div>
+  </div>
+
+  <!-- Nombres de los Autores -->
+  <div class="footer">
+    Proyecto desarrollado por:<br>
+    <p>Gabriel Camilo Quijano Celis</p>
+    <p>Carlos Daniel Aguilera Iglesias</p>
+  </div>
+
+  <script>
+    // Variables para simular la conexión en esta prueba de diseño
+    let isConnected = false;
+
+    // Función que se activa al presionar el botón
+    function toggleConnection() {
+      const btn = document.getElementById('connectionBtn');
+      isConnected = !isConnected; // Cambia de falso a verdadero y viceversa
+      
+      if(isConnected) {
+        // Estado Conectado
+        btn.className = "status-btn connected";
+        btn.innerHTML = "🟢 ESP32 Conectado";
+        
+        // Muestra datos simulados
+        document.getElementById('resValue').innerText = "0.854 Ω";
+        document.getElementById('batValue').innerText = "75 %";
+        document.getElementById('timeValue').innerText = "Cargando: 45 min restantes";
+      } else {
+        // Estado Desconectado
+        btn.className = "status-btn disconnected";
+        btn.innerHTML = "🔴 ESP32 Desconectado (Toca para conectar)";
+        
+        // Borra los datos de la pantalla
+        document.getElementById('resValue').innerText = "-- Ω";
+        document.getElementById('batValue').innerText = "-- %";
+        document.getElementById('timeValue').innerText = "Esperando datos del equipo...";
+      }
+    }
+
+    // Simula el primer intento de conexión al abrir la página
+    setTimeout(function() {
+      document.getElementById('connectionBtn').innerHTML = "🔴 ESP32 Desconectado (Toca para conectar)";
+    }, 1500);
+  </script>
+</body>
+</html>
