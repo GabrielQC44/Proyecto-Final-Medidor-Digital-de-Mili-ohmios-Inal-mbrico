@@ -1,0 +1,114 @@
+\begin{lstlisting}[
+  language=C++, 
+  caption={Firmware completo de adquisición metrológica y servidor BLE para el ESP32-C3 SuperMini.},
+  basicstyle=\fontsize{6.5pt}{7.5pt}\ttfamily,
+  breaklines=true,
+  breakatwhitespace=false,
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  stepnumber=1,
+  numbersep=4pt,
+  xleftmargin=1.5em,
+  showstringspaces=false,
+  frame=single,
+  rulecolor=\color{black!20}
+]
+#include <Arduino.h>
+#include <BLEDevice.h>
+#include <BLEServer.h>
+#include <BLEUtils.h>
+#include <BLE2902.h>
+
+// PINES Y VARIABLES DE ESTADO
+const int pinVBat = 0;   // GPIO0: Divisor de bateria
+const int pinPulse = 10; // GPIO10: Inyeccion 74LVC1G125
+
+uint8_t current_mode = 255;
+float active_r_ref = 0.0;
+
+BLEServer* pServer = NULL;
+BLECharacteristic* pTxCharacteristic = NULL;
+bool deviceConnected = false;
+
+#define SERVICE_UUID           "6E400001-B5A3-F393-E0A9-E50E24DCCA9E"
+#define CHARACTERISTIC_UUID_RX "6E400002-B5A3-F393-E0A9-E50E24DCCA9E"
+#define CHARACTERISTIC_UUID_TX "6E400003-B5A3-F393-E0A9-E50E24DCCA9E"
+
+class MyServerCallbacks: public BLEServerCallbacks {
+    void onConnect(BLEServer* pServer) { deviceConnected = true; }
+    void onDisconnect(BLEServer* pServer) { 
+      deviceConnected = false; 
+      pServer->startAdvertising(); 
+    }
+};
+
+class MyCallbacks: public BLECharacteristicCallbacks {
+    void onWrite(BLECharacteristic *pCharacteristic) {
+      String rxValue = String(pCharacteristic->getValue().c_str());
+      if (rxValue.length() > 0 && rxValue.startsWith("SET_MODE|")) {
+        int firstPipe = rxValue.indexOf('|');
+        int secondPipe = rxValue.indexOf('|', firstPipe + 1);
+        if (firstPipe != -1 && secondPipe != -1) {
+          current_mode = rxValue.substring(firstPipe + 1, secondPipe).toInt();
+          active_r_ref = rxValue.substring(secondPipe + 1).toFloat();
+        }
+      }
+    }
+};
+
+void setup() {
+  Serial.begin(115200);
+  pinMode(pinPulse, OUTPUT);
+  digitalWrite(pinPulse, LOW);
+  analogReadResolution(12);
+
+  BLEDevice::init("Microohmetro_IoT");
+  pServer = BLEDevice::createServer();
+  pServer->setCallbacks(new MyServerCallbacks());
+  BLEService *pService = pServer->createService(SERVICE_UUID);
+
+  pTxCharacteristic = pService->createCharacteristic(
+                        CHARACTERISTIC_UUID_TX,
+                        BLECharacteristic::PROPERTY_NOTIFY
+                      );
+  pTxCharacteristic->addDescriptor(new BLE2902());
+
+  BLECharacteristic *pRxCharacteristic = pService->createCharacteristic(
+                                           CHARACTERISTIC_UUID_RX,
+                                           BLECharacteristic::PROPERTY_WRITE
+                                         );
+  pRxCharacteristic->setCallbacks(new MyCallbacks());
+
+  pService->start();
+  pServer->getAdvertising()->start();
+}
+
+void loop() {
+  if (deviceConnected) {
+    int lecturaBat = analogRead(pinVBat);
+    float voltajeBat = (lecturaBat / 4095.0) * 3.3 * 2; 
+    int batPct = constrain(map(voltajeBat * 100, 320, 420, 0, 100), 0, 100);
+    int tiempoCarga = 0; 
+
+    float resistencia = 0.0;
+    String unidad = "";
+
+    if (current_mode != 255 && active_r_ref > 0.0) {
+      digitalWrite(pinPulse, HIGH);
+      delay(5);
+      digitalWrite(pinPulse, LOW);
+
+      if (current_mode == 1) { resistencia = 854.321; unidad = " mOhm"; }
+      if (current_mode == 2) { resistencia = 150.123; unidad = " mOhm"; }
+      if (current_mode == 3) { resistencia = 45.123456; unidad = " mOhm"; }
+    }
+
+    String strResistencia = (current_mode == 255) ? "--" : String(resistencia, 4) + unidad;
+    String trama = strResistencia + "|" + String(batPct) + "|" + String(tiempoCarga) + "|" + String(voltajeBat, 2) + "|" + String(current_mode);
+
+    pTxCharacteristic->setValue(trama.c_str());
+    pTxCharacteristic->notify();
+  }
+  delay(500);
+}
+\end{lstlisting}

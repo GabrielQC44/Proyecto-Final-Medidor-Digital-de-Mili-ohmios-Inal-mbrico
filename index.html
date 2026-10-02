@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Microóhmetro IoT</title>
+  <style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f6; color: #333; display: flex; flex-direction: column; align-items: center; padding: 15px; margin: 0; min-height: 100vh; }
+    .header-container { text-align: center; width: 100%; max-width: 400px; margin-bottom: 10px; }
+    .logo { max-width: 140px; margin-bottom: 10px; }
+    h2 { color: #000; margin: 0 0 15px 0; font-size: 20px; letter-spacing: 1px; }
+    
+    .status-btn { color: white; border: none; padding: 10px 20px; border-radius: 30px; font-size: 14px; font-weight: bold; width: 100%; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 15px; cursor: pointer; transition: 0.3s;}
+    .connected { background-color: #28a745; }
+    .disconnected { background-color: #dc3545; }
+    
+    .panel { background: #fff; width: 100%; max-width: 360px; border-radius: 12px; padding: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 15px; box-sizing: border-box; }
+    
+    /* Selector de Modos */
+    .mode-title { font-size: 13px; font-weight: bold; color: #666; text-transform: uppercase; margin-bottom: 10px; text-align: center; }
+    .mode-buttons { display: flex; gap: 8px; justify-content: space-between; margin-bottom: 10px; }
+    .btn-mode { flex: 1; padding: 10px 5px; border: 1px solid #0056b3; background: #fff; color: #0056b3; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.2s; font-size: 13px; }
+    .btn-mode.active { background: #0056b3; color: #fff; }
+    .btn-mode:disabled { border-color: #ccc; color: #ccc; cursor: not-allowed; }
+    
+    .calib-row { display: flex; align-items: center; justify-content: space-between; font-size: 13px; margin-top: 10px; background: #f8f9fa; padding: 8px; border-radius: 6px;}
+    .calib-row input { width: 70px; padding: 4px; border: 1px solid #ccc; border-radius: 4px; text-align: center; }
+    .calib-row button { background: #6c757d; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; }
+
+    /* Alertas */
+    .alert { display: none; padding: 10px; border-radius: 8px; font-size: 13px; font-weight: bold; text-align: center; margin-bottom: 15px; width: 100%; max-width: 360px; box-sizing: border-box;}
+    .alert.warning { background: #fff3cd; color: #856404; border: 1px solid #ffeeba; display: block; }
+    .alert.error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; display: block; }
+
+    /* Tarjetas de Medida */
+    .card-measure { text-align: center; border-left: 5px solid #0056b3; margin-bottom: 15px; }
+    .card-battery { text-align: center; border-left: 5px solid #333; margin-bottom: 15px;}
+    .value { font-size: 38px; font-weight: bold; color: #0056b3; margin: 15px 0; }
+    .value.battery { color: #333; font-size: 28px; margin: 5px 0;}
+    .battery-container { width: 100%; background: #e0e0e0; border-radius: 10px; height: 12px; overflow: hidden; margin: 10px 0; }
+    .battery-bar { height: 100%; width: 0%; background: #28a745; transition: 0.3s; }
+    
+    #saveIndicator { font-size: 11px; color: #28a745; height: 15px; margin-top: 8px; transition: opacity 0.5s; opacity: 0; font-weight: bold;}
+    
+    /* Botones de Acción Globales */
+    .btn-action { color: white; border: none; padding: 12px; border-radius: 8px; font-weight: bold; width: 100%; cursor: pointer; transition: background-color 0.3s, transform 0.1s; margin-bottom: 10px;}
+    .btn-action:active:not(:disabled) { transform: scale(0.96); }
+    .btn-action:disabled { background: #ccc; cursor: not-allowed; transform: none; }
+    .btn-save { background: #17a2b8; }
+    .btn-view { background: #17a2b8; }
+    .btn-reset { background: #6c757d; }
+    .btn-export { background: #28a745; }
+
+    /* Ventana Modal (Nueva Página de Mediciones) */
+    .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); display: none; justify-content: center; align-items: center; z-index: 1000; padding: 15px; box-sizing: border-box;}
+    .modal-content { background: white; width: 100%; max-width: 400px; border-radius: 12px; padding: 20px; max-height: 85vh; display: flex; flex-direction: column; }
+    .modal-header { font-size: 18px; font-weight: bold; margin-bottom: 15px; text-align: center; color: #0056b3;}
+    .history-list { overflow-y: auto; flex-grow: 1; background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px; font-size: 12px; border: 1px solid #ddd;}
+    .history-item { border-bottom: 1px solid #eee; padding: 8px 0; }
+    .history-item:last-child { border-bottom: none; }
+    .history-item span { display: block; color: #666; font-size: 10px; margin-top: 3px;}
+    .modal-buttons { display: flex; gap: 10px; }
+  </style>
+</head>
+<body>
+
+  <div class="header-container">
+    <img src="logo.png" alt="Logo" class="logo">
+    <h2>MICROÓHMETRO IoT</h2>
+    <button id="connectionBtn" class="status-btn disconnected" onclick="toggleConnection()">🔴 Esperando conexión...</button>
+  </div>
+
+  <div class="panel">
+    <div class="mode-title">Selector de Rango Físico</div>
+    <div class="mode-buttons">
+      <button class="btn-mode" id="btnM1" onclick="setMode(1)">Modo 1<br>(100 mA)</button>
+      <button class="btn-mode" id="btnM2" onclick="setMode(2)">Modo 2<br>(500 mA)</button>
+      <button class="btn-mode" id="btnM3" onclick="setMode(3)">Modo 3<br>(1 A)</button>
+    </div>
+    <div class="calib-row" id="calibRow" style="display: none;">
+      <label>R_REF Calibrado (Ω):</label>
+      <input type="number" id="inputRref" step="0.0001">
+      <button onclick="saveCalibration()">Guardar</button>
+    </div>
+  </div>
+
+  <div id="alertBox" class="alert"></div>
+
+  <div class="panel card-measure">
+    <div class="mode-title">Resistencia Bajo Prueba</div>
+    <div class="value" id="resValue">--</div>
+    
+    <!-- Botón de guardado manual restaurado -->
+    <button class="btn-action btn-save" id="btnSave" onclick="saveMeasurement()" disabled>Guardar Medición</button>
+    <div id="saveIndicator">Guardado en memoria ✓</div>
+  </div>
+
+  <div class="panel card-battery">
+    <div class="mode-title">Nivel de Batería</div>
+    <div class="value battery" id="batValue">-- %</div>
+    <div class="battery-container"><div class="battery-bar" id="batBar"></div></div>
+    <div id="timeValue" style="font-size: 12px; color: #666;">Esperando datos...</div>
+  </div>
+
+  <div style="width: 100%; max-width: 360px;">
+    <button class="btn-action btn-view" onclick="openHistory()">Ver Mediciones Guardadas</button>
+    <button class="btn-action btn-reset" onclick="resetApp()">Reiniciar App</button>
+  </div>
+
+  <div class="modal-overlay" id="historyModal">
+    <div class="modal-content">
+      <div class="modal-header">Mediciones Guardadas</div>
+      <div class="history-list" id="historyList">Sin mediciones guardadas.</div>
+      <div class="modal-buttons">
+        <button class="btn-action btn-reset" onclick="closeHistory()">Cerrar</button>
+        <button class="btn-action btn-export" onclick="exportCSV()">Exportar CSV</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const CONFIG = {
+      1: { r_ref_nom: 1.0,  i_nom: "100 mA", min_rx: 0.2, max_rx: 1.0, vbat_min: 3.4 },
+      2: { r_ref_nom: 0.2,  i_nom: "500 mA", min_rx: 0.1, max_rx: 0.2, vbat_min: 3.5 },
+      3: { r_ref_nom: 0.1,  i_nom: "1 A",    min_rx: 0.0005, max_rx: 0.1, vbat_min: 3.6 }
+    };
+
+    let currentMode = null;
+    let isConnected = false;
+    let isSimulating = false;
+    let lastValidRx = null;
+    let lastValidVbat = null;
+    
+    let calibratedRefs = JSON.parse(localStorage.getItem('calibRefs')) || {1: 1.0, 2: 0.2, 3: 0.1};
+    let historyData = JSON.parse(localStorage.getItem('rxHistory')) || [];
+
+    window.onload = function() {
+      let savedMode = localStorage.getItem('lastMode');
+      if (savedMode) {
+        if (confirm("¿El selector físico del equipo está en la Posición " + savedMode + "?")) {
+          setMode(parseInt(savedMode));
+        }
+      }
+    };
+
+    function setMode(modo) {
+      currentMode = modo;
+      localStorage.setItem('lastMode', modo);
+      
+      document.getElementById('btnM1').className = (modo === 1) ? "btn-mode active" : "btn-mode";
+      document.getElementById('btnM2').className = (modo === 2) ? "btn-mode active" : "btn-mode";
+      document.getElementById('btnM3').className = (modo === 3) ? "btn-mode active" : "btn-mode";
+      
+      document.getElementById('calibRow').style.display = "flex";
+      document.getElementById('inputRref').value = calibratedRefs[modo];
+
+      document.getElementById('resValue').innerText = "--";
+      document.getElementById('btnSave').disabled = true;
+      hideAlert();
+
+      if (window.AppInventor) {
+        let tramaSalida = "SET_MODE|" + modo + "|" + calibratedRefs[modo];
+        window.AppInventor.setWebViewString(tramaSalida);
+      }
+    }
+
+    function saveCalibration() {
+      if(!currentMode) return;
+      let val = parseFloat(document.getElementById('inputRref').value);
+      if(val > 0) {
+        calibratedRefs[currentMode] = val;
+        localStorage.setItem('calibRefs', JSON.stringify(calibratedRefs));
+        alert("Calibración guardada para el Modo " + currentMode);
+        setMode(currentMode);
+      }
+    }
+
+    function showAlert(msg, type) {
+      let box = document.getElementById('alertBox');
+      box.className = "alert " + type;
+      box.innerText = msg;
+    }
+    function hideAlert() {
+      document.getElementById('alertBox').style.display = "none";
+    }
+
+    function toggleConnection() {
+      if (!currentMode) {
+         showAlert("Selecciona un rango físico primero.", "error");
+         return;
+      }
+      isSimulating = !isSimulating;
+      isConnected = isSimulating;
+      
+      let btn = document.getElementById('connectionBtn');
+      if(isConnected) {
+        btn.className = "status-btn connected";
+        btn.innerHTML = "🟢 Equipo Conectado";
+        hideAlert();
+      } else {
+        btn.className = "status-btn disconnected";
+        btn.innerHTML = "🔴 Esperando conexión...";
+        document.getElementById('resValue').innerText = "--";
+        document.getElementById('btnSave').disabled = true;
+        document.getElementById('batValue').innerText = "-- %";
+        document.getElementById('batBar').style.width = "0%";
+        document.getElementById('timeValue').innerText = "Esperando datos...";
+      }
+    }
+
+    function processIncomingData(rxStr, batPct, tCarga, vBat, modoEco) {
+      document.getElementById('batValue').innerText = batPct + " %";
+      var barra = document.getElementById('batBar');
+      barra.style.width = batPct + "%";
+      if (batPct > 60) barra.style.background = "#28a745";
+      else if (batPct > 20) barra.style.background = "#ffc107";
+      else barra.style.background = "#dc3545";
+
+      if (!currentMode) return;
+      if (modoEco !== currentMode && modoEco !== 255) return;
+      
+      if (tCarga > 0) {
+        document.getElementById('timeValue').innerText = "Cargando: " + tCarga + " min";
+        document.getElementById('resValue').innerText = "--";
+        document.getElementById('btnSave').disabled = true;
+        return;
+      } else {
+        document.getElementById('timeValue').innerText = "VBat: " + vBat.toFixed(2) + " V";
+      }
+      
+      if (vBat < CONFIG[currentMode].vbat_min) {
+        document.getElementById('resValue').innerText = "--";
+        document.getElementById('btnSave').disabled = true;
+        return;
+      }
+
+      hideAlert();
+      document.getElementById('resValue').innerText = rxStr;
+      lastValidRx = rxStr;
+      lastValidVbat = vBat;
+      document.getElementById('btnSave').disabled = false;
+    }
+
+    setInterval(function() {
+      if (isSimulating) {
+        let rxSimulado = "0.000";
+        if(currentMode === 1) rxSimulado = "0.854321 Ω";
+        if(currentMode === 2) rxSimulado = "150.1234 mΩ";
+        if(currentMode === 3) rxSimulado = "45.123456 mΩ";
+        processIncomingData(rxSimulado, 85, 0, 3.85, currentMode);
+      } 
+      else if (window.AppInventor) {
+        var datos = window.AppInventor.getWebViewString();
+        if (datos && datos.length > 0 && datos.includes("|") && !datos.startsWith("SET_MODE")) {
+          var p = datos.split('|');
+          if (p.length >= 5) {
+            isConnected = true;
+            document.getElementById('connectionBtn').className = "status-btn connected";
+            document.getElementById('connectionBtn').innerText = "🟢 Equipo Conectado";
+            processIncomingData(p[0], parseInt(p[1]), parseInt(p[2]), parseFloat(p[3]), parseInt(p[4]));
+          }
+        }
+      }
+    }, 500);
+
+    // FUNCIÓN DE GUARDADO MANUAL CON ANIMACIÓN
+    function saveMeasurement() {
+      if (!isConnected || !currentMode || !lastValidRx || document.getElementById('resValue').innerText === "--") return;
+
+      let entry = {
+        fecha: new Date().toLocaleString(),
+        modo: currentMode,
+        r_ref: calibratedRefs[currentMode],
+        i_nom: CONFIG[currentMode].i_nom,
+        rx: lastValidRx,
+        vbat: lastValidVbat.toFixed(2)
+      };
+      
+      historyData.unshift(entry);
+      if(historyData.length > 200) historyData.pop(); 
+      localStorage.setItem('rxHistory', JSON.stringify(historyData));
+      
+      // Feedback visual interactivo
+      let btn = document.getElementById('btnSave');
+      let ind = document.getElementById('saveIndicator');
+      
+      btn.innerText = "¡Guardado!";
+      btn.style.background = "#28a745"; // Cambia a verde
+      ind.style.opacity = "1";
+      
+      // Restaura el botón después de 1.5 segundos
+      setTimeout(() => { 
+        btn.innerText = "Guardar Medición"; 
+        btn.style.background = "#17a2b8"; // Vuelve a azul
+        ind.style.opacity = "0"; 
+      }, 1500);
+    }
+
+    function openHistory() {
+      let list = document.getElementById('historyList');
+      if (historyData.length === 0) {
+        list.innerHTML = "Sin mediciones guardadas.";
+      } else {
+        list.innerHTML = "";
+        historyData.forEach(e => {
+          list.innerHTML += `<div class="history-item">
+            <b>${e.rx}</b> 
+            <span>Modo ${e.modo} (${e.i_nom}) | R_Ref: ${e.r_ref}Ω | VBat: ${e.vbat}V | ${e.fecha}</span>
+          </div>`;
+        });
+      }
+      document.getElementById('historyModal').style.display = 'flex';
+    }
+
+    function closeHistory() {
+      document.getElementById('historyModal').style.display = 'none';
+    }
+
+    function exportCSV() {
+      if(historyData.length === 0) { alert("No hay datos para exportar."); return; }
+      
+      let csvContent = "data:text/csv;charset=utf-8,";
+      csvContent += "Fecha,Modo,Corriente_Nominal,R_REF_Usado(Ohm),V_Bateria,Resistencia_Medida\n";
+      
+      historyData.forEach(e => {
+        let rxLimpio = e.rx.replace(" Ω", "").replace(" mΩ", "").replace(" µΩ", "");
+        let unidad = e.rx.replace(/[^a-zA-ZΩµ]/g, '').trim();
+        csvContent += `"${e.fecha}",${e.modo},${e.i_nom},${e.r_ref},${e.vbat},${rxLimpio} ${unidad}\n`;
+      });
+      
+      var encodedUri = encodeURI(csvContent);
+      var link = document.createElement("a");
+      link.setAttribute("href", encodedUri);
+      link.setAttribute("download", "Mediciones_Kelvin.csv");
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      
+      if(confirm("Descarga iniciada. ¿Deseas borrar las mediciones actuales para iniciar una sesión nueva?")) {
+        historyData = [];
+        localStorage.setItem('rxHistory', JSON.stringify(historyData));
+        closeHistory();
+      }
+    }
+
+    function resetApp() {
+      if(confirm("¿Estás seguro de que deseas borrar toda la configuración, historiales y reiniciar la aplicación?")) {
+        localStorage.clear();
+        location.reload();
+      }
+    }
+  </script>
+</body>
+</html>
