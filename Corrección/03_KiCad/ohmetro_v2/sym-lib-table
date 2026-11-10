@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "ohmetro")(type "KiCad")(uri "${KIPRJMOD}/ohmetro.kicad_sym")(options "")(descr "Símbolos propios del miliohmímetro"))
+)

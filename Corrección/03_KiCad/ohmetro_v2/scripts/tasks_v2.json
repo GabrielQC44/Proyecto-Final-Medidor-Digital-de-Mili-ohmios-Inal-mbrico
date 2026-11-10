@@ -1,0 +1,5510 @@
+{
+"grid": 0.1,
+"clearance": 0.2,
+"hole_to_hole": 0.26,
+"edge": 0.4,
+"via_cost": 12,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"layer_cost": {
+"F.Cu": 1.0,
+"In2.Cu": 1.1,
+"B.Cu": 1.6
+},
+"tasks": [
+{
+"net": "GND",
+"a": [
+118.1375,
+105.75
+],
+"b": [
+118.1375,
+105.75
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+117.725,
+105.625,
+118.55,
+105.875
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+119.35,
+106.4625
+],
+"b": [
+119.35,
+106.4625
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+119.225,
+106.05,
+119.475,
+106.875
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+120.35,
+106.4625
+],
+"b": [
+120.35,
+106.4625
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+120.225,
+106.05,
+120.475,
+106.875
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+116.2625,
+113.95
+],
+"b": [
+116.2625,
+113.95
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+115.75,
+113.775,
+116.775,
+114.125
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+116.2625,
+115.25
+],
+"b": [
+116.2625,
+115.25
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+115.75,
+115.075,
+116.775,
+115.425
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+123.65,
+121.2975
+],
+"b": [
+123.65,
+121.2975
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+123.525,
+120.87,
+123.775,
+121.725
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+124.15,
+121.2975
+],
+"b": [
+124.15,
+121.2975
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+124.025,
+120.87,
+124.275,
+121.725
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+124.65,
+121.2975
+],
+"b": [
+124.65,
+121.2975
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+124.525,
+120.87,
+124.775,
+121.725
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+120.7625,
+126.6
+],
+"b": [
+120.7625,
+126.6
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+120.25,
+126.425,
+121.275,
+126.775
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+117.4875,
+120.1
+],
+"b": [
+117.4875,
+120.1
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+117.15,
+119.925,
+117.825,
+120.275
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+118.9125,
+121.1
+],
+"b": [
+118.9125,
+121.1
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+118.575,
+120.925,
+119.25,
+121.275
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "/VSYS",
+"a": [
+121.0625,
+105.25
+],
+"b": [
+121.0625,
+104.75
+],
+"w": 0.8,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.6,
+"via_drill": 0.3,
+"w_min": 0.25,
+"layer_cost": {
+"F.Cu": 2.5,
+"In2.Cu": 1.0,
+"B.Cu": 1.8
+}
+},
+{
+"net": "/VSYS",
+"a": [
+126.1,
+104.1
+],
+"b": [
+126.1,
+103.6
+],
+"w": 0.8,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.6,
+"via_drill": 0.3,
+"w_min": 0.25,
+"layer_cost": {
+"F.Cu": 2.5,
+"In2.Cu": 1.0,
+"B.Cu": 1.8
+}
+},
+{
+"net": "/VBAT",
+"a": [
+118.1375,
+104.75
+],
+"b": [
+118.1375,
+105.25
+],
+"w": 0.8,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.6,
+"via_drill": 0.3,
+"w_min": 0.25,
+"layer_cost": {
+"F.Cu": 2.5,
+"In2.Cu": 1.0,
+"B.Cu": 1.8
+}
+},
+{
+"net": "/USB_DP",
+"a": [
+108.18,
+127.35
+],
+"b": [
+108.18,
+128.35
+],
+"w": 0.15,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.15
+},
+{
+"net": "/USB_DN",
+"a": [
+108.18,
+126.85
+],
+"b": [
+108.18,
+127.85
+],
+"w": 0.15,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.15
+},
+{
+"net": "/BUF_Y",
+"a": [
+119.2,
+115.11
+],
+"b": [
+117.9375,
+115.25
+],
+"w": 0.2,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.2
+},
+{
+"net": "/VSYS",
+"a": [
+126.1,
+103.6
+],
+"b": [
+127.75,
+103.6
+],
+"w": 0.8,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.6,
+"via_drill": 0.3,
+"w_min": 0.25,
+"layer_cost": {
+"F.Cu": 2.5,
+"In2.Cu": 1.0,
+"B.Cu": 1.8
+}
+},
+{
+"net": "/TMR",
+"a": [
+119.85,
+103.5375
+],
+"b": [
+120.1,
+102.11
+],
+"w": 0.15,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.15
+},
+{
+"net": "/3V3",
+"a": [
+123.92,
+116.4
+],
+"b": [
+124.15,
+117.9025
+],
+"w": 0.4,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.25
+},
+{
+"net": "/ITERM",
+"a": [
+119.0,
+102.11
+],
+"b": [
+119.35,
+103.5375
+],
+"w": 0.15,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.15
+},
+{
+"net": "/PULSE",
+"a": [
+114.9,
+115.11
+],
+"b": [
+116.2625,
+114.6
+],
+"w": 0.15,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.15
+},
+{
+"net": "/FB",
+"a": [
+126.0,
+106.89
+],
+"b": [
+126.1,
+105.1
+],
+"w": 0.2,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.2
+},
+{
+"net": "/ISET",
+"a": [
+118.85,
+103.5375
+],
+"b": [
+117.9,
+102.11
+],
+"w": 0.15,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.15
+},
+{
+"net": "/VBUS",
+"a": [
+120.35,
+103.5375
+],
+"b": [
+121.3,
+102.08
+],
+"w": 0.5,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.25
+},
+{
+"net": "/USB_PG",
+"a": [
+119.85,
+106.4625
+],
+"b": [
+119.85,
+108.91
+],
+"w": 0.15,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.15
+},
+{
+"net": "/VSYS",
+"a": [
+121.0625,
+105.25
+],
+"b": [
+123.0,
+105.775
+],
+"w": 0.8,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.6,
+"via_drill": 0.3,
+"w_min": 0.25,
+"layer_cost": {
+"F.Cu": 2.5,
+"In2.Cu": 1.0,
+"B.Cu": 1.8
+}
+},
+{
+"net": "/VSYS",
+"a": [
+124.8,
+105.375
+],
+"b": [
+126.1,
+104.1
+],
+"w": 0.8,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.6,
+"via_drill": 0.3,
+"w_min": 0.25,
+"layer_cost": {
+"F.Cu": 2.5,
+"In2.Cu": 1.0,
+"B.Cu": 1.8
+}
+},
+{
+"net": "/VBAT",
+"a": [
+118.1375,
+105.25
+],
+"b": [
+116.2,
+105.975
+],
+"w": 0.8,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.6,
+"via_drill": 0.3,
+"w_min": 0.25,
+"layer_cost": {
+"F.Cu": 2.5,
+"In2.Cu": 1.0,
+"B.Cu": 1.8
+}
+},
+{
+"net": "/3V3",
+"a": [
+121.12,
+124.4
+],
+"b": [
+122.4375,
+125.95
+],
+"w": 0.4,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.25
+},
+{
+"net": "/INN",
+"a": [
+122.08,
+128.8
+],
+"b": [
+120.7625,
+127.25
+],
+"w": 0.2,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.2
+},
+{
+"net": "/OPA_OUT",
+"a": [
+121.12,
+128.8
+],
+"b": [
+122.4375,
+127.25
+],
+"w": 0.2,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.2
+},
+{
+"net": "/INN",
+"a": [
+120.7625,
+127.25
+],
+"b": [
+119.0,
+126.09
+],
+"w": 0.2,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.2
+},
+{
+"net": "/3V3",
+"a": [
+116.52,
+112.4
+],
+"b": [
+117.9375,
+113.95
+],
+"w": 0.4,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.25
+},
+{
+"net": "/OPA_OUT",
+"a": [
+122.4375,
+127.25
+],
+"b": [
+123.89,
+128.8
+],
+"w": 0.2,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.2
+},
+{
+"net": "/AIN2",
+"a": [
+128.325,
+121.2
+],
+"b": [
+126.0975,
+120.35
+],
+"w": 0.2,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.2
+},
+{
+"net": "/RANGE_B",
+"a": [
+120.4,
+121.11
+],
+"b": [
+117.4875,
+120.6
+],
+"w": 0.15,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.15
+},
+{
+"net": "/VSYS",
+"a": [
+118.85,
+106.4625
+],
+"b": [
+121.0625,
+105.25
+],
+"w": 0.8,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.6,
+"via_drill": 0.3,
+"w_min": 0.25,
+"layer_cost": {
+"F.Cu": 2.5,
+"In2.Cu": 1.0,
+"B.Cu": 1.8
+}
+},
+{
+"net": "/USB_DN",
+"a": [
+111.4625,
+126.65
+],
+"b": [
+108.18,
+126.85
+],
+"w": 0.15,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.15
+},
+{
+"net": "/USB_DP",
+"a": [
+108.18,
+128.35
+],
+"b": [
+111.4625,
+128.55
+],
+"w": 0.15,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.15
+},
+{
+"net": "/RANGE_A",
+"a": [
+115.8,
+121.11
+],
+"b": [
+118.9125,
+120.6
+],
+"w": 0.15,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.15
+},
+{
+"net": "/AVDD",
+"a": [
+126.1,
+115.48
+],
+"b": [
+124.65,
+117.9025
+],
+"w": 0.2,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.2
+},
+{
+"net": "/ADS_CS",
+"a": [
+121.09,
+122.9
+],
+"b": [
+122.7025,
+120.35
+],
+"w": 0.15,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.15
+},
+{
+"net": "/SWB",
+"a": [
+120.2,
+117.09
+],
+"b": [
+118.9125,
+120.1
+],
+"w": 0.2,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.2
+},
+{
+"net": "/CHG_N",
+"a": [
+121.8125,
+109.4
+],
+"b": [
+121.0625,
+105.75
+],
+"w": 0.15,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.15
+},
+{
+"net": "/ILIM",
+"a": [
+121.0625,
+104.25
+],
+"b": [
+123.4,
+107.09
+],
+"w": 0.15,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.15
+},
+{
+"net": "/AIN3",
+"a": [
+129.11,
+119.8
+],
+"b": [
+125.15,
+121.2975
+],
+"w": 0.2,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.2
+},
+{
+"net": "/CC1",
+"a": [
+110.4,
+122.71
+],
+"b": [
+108.18,
+126.35
+],
+"w": 0.15,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.15
+},
+{
+"net": "/3V3",
+"a": [
+124.15,
+117.9025
+],
+"b": [
+120.4,
+120.09
+],
+"w": 0.4,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.25
+},
+{
+"net": "/VSET",
+"a": [
+117.91,
+122.8
+],
+"b": [
+120.7625,
+125.95
+],
+"w": 0.2,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.2
+},
+{
+"net": "/TS",
+"a": [
+118.1375,
+104.25
+],
+"b": [
+115.5,
+108.21
+],
+"w": 0.15,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.15
+},
+{
+"net": "/AIN1",
+"a": [
+129.11,
+124.4
+],
+"b": [
+126.0975,
+118.85
+],
+"w": 0.2,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.2
+},
+{
+"net": "/AIN0",
+"a": [
+129.11,
+123.2
+],
+"b": [
+125.15,
+117.9025
+],
+"w": 0.2,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.2
+},
+{
+"net": "/CC2",
+"a": [
+108.18,
+129.35
+],
+"b": [
+111.8,
+122.71
+],
+"w": 0.15,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.15
+},
+{
+"net": "/RANGE_B",
+"a": [
+117.4875,
+120.6
+],
+"b": [
+110.5,
+116.6
+],
+"w": 0.15,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.15
+},
+{
+"net": "/3V3",
+"a": [
+122.4375,
+125.95
+],
+"b": [
+115.2,
+132.8
+],
+"w": 0.4,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.25
+},
+{
+"net": "/MOSI",
+"a": [
+108.9,
+116.6
+],
+"b": [
+122.7025,
+119.35
+],
+"w": 0.15,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.15
+},
+{
+"net": "/MISO",
+"a": [
+108.1,
+116.6
+],
+"b": [
+122.7025,
+118.85
+],
+"w": 0.15,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.15
+},
+{
+"net": "/USB_DP",
+"a": [
+113.2,
+114.1
+],
+"b": [
+108.18,
+127.35
+],
+"w": 0.15,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.15
+},
+{
+"net": "/SCLK",
+"a": [
+107.3,
+116.6
+],
+"b": [
+122.7025,
+119.85
+],
+"w": 0.15,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.15
+},
+{
+"net": "/VBAT",
+"a": [
+118.1375,
+105.25
+],
+"b": [
+136.3,
+108.15
+],
+"w": 0.8,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.6,
+"via_drill": 0.3,
+"w_min": 0.25,
+"layer_cost": {
+"F.Cu": 2.5,
+"In2.Cu": 1.0,
+"B.Cu": 1.8
+}
+},
+{
+"net": "/VBUS",
+"a": [
+120.35,
+103.5375
+],
+"b": [
+108.18,
+125.2
+],
+"w": 0.5,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.25
+},
+{
+"net": "/VBUS",
+"a": [
+108.18,
+125.2
+],
+"b": [
+108.18,
+125.2
+],
+"w": 0.5,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.4
+},
+{
+"net": "/VBUS",
+"a": [
+108.18,
+130.0
+],
+"b": [
+108.18,
+130.0
+],
+"w": 0.5,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.4
+},
+{
+"net": "/F_PLUS",
+"a": [
+129.835,
+132.33
+],
+"b": [
+129.835,
+132.99
+],
+"w": 1.0,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.6,
+"via_drill": 0.3,
+"w_min": 0.25,
+"layer_cost": {
+"F.Cu": 2.5,
+"In2.Cu": 1.0,
+"B.Cu": 1.8
+}
+},
+{
+"net": "/F_PLUS",
+"a": [
+129.835,
+131.67
+],
+"b": [
+129.835,
+132.33
+],
+"w": 1.0,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.6,
+"via_drill": 0.3,
+"w_min": 0.25,
+"layer_cost": {
+"F.Cu": 2.5,
+"In2.Cu": 1.0,
+"B.Cu": 1.8
+}
+},
+{
+"net": "/3V3",
+"a": [
+103.0,
+120.08
+],
+"b": [
+101.6,
+120.375
+],
+"w": 0.4,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.4
+},
+{
+"net": "/3V3",
+"a": [
+126.0,
+107.91
+],
+"b": [
+127.65,
+107.6
+],
+"w": 0.4,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.25
+},
+{
+"net": "/VSYS",
+"a": [
+123.0,
+105.775
+],
+"b": [
+124.8,
+105.375
+],
+"w": 0.8,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.6,
+"via_drill": 0.3,
+"w_min": 0.4,
+"layer_cost": {
+"F.Cu": 2.5,
+"In2.Cu": 1.0,
+"B.Cu": 1.8
+}
+},
+{
+"net": "/3V3",
+"a": [
+122.11,
+122.9
+],
+"b": [
+121.12,
+124.4
+],
+"w": 0.4,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.25
+},
+{
+"net": "/3V3",
+"a": [
+105.09,
+119.0
+],
+"b": [
+103.0,
+120.08
+],
+"w": 0.4,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.25
+},
+{
+"net": "/3V3",
+"a": [
+117.51,
+109.9
+],
+"b": [
+116.52,
+112.4
+],
+"w": 0.4,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.25
+},
+{
+"net": "/3V3",
+"a": [
+123.92,
+116.4
+],
+"b": [
+127.09,
+116.0
+],
+"w": 0.4,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.25
+},
+{
+"net": "/PGND",
+"a": [
+128.45,
+112.6
+],
+"b": [
+124.75,
+112.6
+],
+"w": 1.0,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.6,
+"via_drill": 0.3,
+"w_min": 0.4,
+"layer_cost": {
+"F.Cu": 2.5,
+"In2.Cu": 1.0,
+"B.Cu": 1.8
+}
+},
+{
+"net": "/VSYS",
+"a": [
+122.85,
+112.6
+],
+"b": [
+126.55,
+112.6
+],
+"w": 0.8,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.6,
+"via_drill": 0.3,
+"w_min": 0.4,
+"layer_cost": {
+"F.Cu": 2.5,
+"In2.Cu": 1.0,
+"B.Cu": 1.8
+}
+},
+{
+"net": "/PGND",
+"a": [
+130.9,
+111.0
+],
+"b": [
+128.45,
+112.6
+],
+"w": 1.0,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.6,
+"via_drill": 0.3,
+"w_min": 0.25,
+"layer_cost": {
+"F.Cu": 2.5,
+"In2.Cu": 1.0,
+"B.Cu": 1.8
+}
+},
+{
+"net": "/3V3",
+"a": [
+119.85,
+107.89
+],
+"b": [
+117.51,
+109.9
+],
+"w": 0.4,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.25
+},
+{
+"net": "/3V3",
+"a": [
+120.4,
+120.09
+],
+"b": [
+122.11,
+122.9
+],
+"w": 0.4,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.25
+},
+{
+"net": "/VBUS",
+"a": [
+108.18,
+125.2
+],
+"b": [
+108.18,
+130.0
+],
+"w": 0.5,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.4
+},
+{
+"net": "/3V3",
+"a": [
+115.2,
+132.8
+],
+"b": [
+114.4,
+136.91
+],
+"w": 0.4,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.25
+},
+{
+"net": "/VBAT",
+"a": [
+116.2,
+105.975
+],
+"b": [
+115.0,
+102.11
+],
+"w": 0.8,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.6,
+"via_drill": 0.3,
+"w_min": 0.25,
+"layer_cost": {
+"F.Cu": 2.5,
+"In2.Cu": 1.0,
+"B.Cu": 1.8
+}
+},
+{
+"net": "/3V3",
+"a": [
+122.09,
+110.9
+],
+"b": [
+119.85,
+107.89
+],
+"w": 0.4,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.25
+},
+{
+"net": "/F_PLUS",
+"a": [
+133.0,
+128.6
+],
+"b": [
+129.835,
+131.67
+],
+"w": 1.0,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu",
+"In2.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.6,
+"via_drill": 0.3,
+"w_min": 0.25,
+"layer_cost": {
+"F.Cu": 2.5,
+"In2.Cu": 1.0,
+"B.Cu": 1.8
+}
+},
+{
+"net": "/PGND",
+"a": [
+130.9,
+111.0
+],
+"b": [
+134.3,
+108.15
+],
+"w": 1.0,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.6,
+"via_drill": 0.3,
+"w_min": 0.25,
+"layer_cost": {
+"F.Cu": 2.5,
+"In2.Cu": 1.0,
+"B.Cu": 1.8
+}
+},
+{
+"net": "/3V3",
+"a": [
+122.09,
+110.9
+],
+"b": [
+126.0,
+107.91
+],
+"w": 0.4,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.25
+},
+{
+"net": "/VSYS",
+"a": [
+123.0,
+105.775
+],
+"b": [
+122.85,
+112.6
+],
+"w": 0.8,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.6,
+"via_drill": 0.3,
+"w_min": 0.4,
+"layer_cost": {
+"F.Cu": 2.5,
+"In2.Cu": 1.0,
+"B.Cu": 1.8
+}
+},
+{
+"net": "/3V3",
+"a": [
+123.92,
+116.4
+],
+"b": [
+122.09,
+110.9
+],
+"w": 0.4,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.25
+},
+{
+"net": "/VBUS",
+"a": [
+108.18,
+125.2
+],
+"b": [
+113.7375,
+127.6
+],
+"w": 0.5,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.4
+},
+{
+"net": "/F_MINUS",
+"a": [
+131.745,
+114.565
+],
+"b": [
+133.0,
+122.6
+],
+"w": 1.0,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu",
+"In2.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.6,
+"via_drill": 0.3,
+"w_min": 0.4,
+"layer_cost": {
+"F.Cu": 2.5,
+"In2.Cu": 1.0,
+"B.Cu": 1.8
+}
+},
+{
+"net": "/PGND",
+"a": [
+134.3,
+108.15
+],
+"b": [
+137.455,
+114.565
+],
+"w": 1.0,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.6,
+"via_drill": 0.3,
+"w_min": 0.4,
+"layer_cost": {
+"F.Cu": 2.5,
+"In2.Cu": 1.0,
+"B.Cu": 1.8
+}
+},
+{
+"net": "/3V3",
+"a": [
+105.09,
+119.0
+],
+"b": [
+101.4,
+109.3
+],
+"w": 0.4,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.25
+},
+{
+"net": "/3V3",
+"a": [
+116.52,
+112.4
+],
+"b": [
+105.09,
+119.0
+],
+"w": 0.4,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.25
+},
+{
+"net": "/VSYS",
+"a": [
+126.55,
+112.6
+],
+"b": [
+127.8425,
+132.0
+],
+"w": 0.8,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.6,
+"via_drill": 0.3,
+"w_min": 0.4,
+"layer_cost": {
+"F.Cu": 2.5,
+"In2.Cu": 1.0,
+"B.Cu": 1.8
+}
+},
+{
+"net": "/RX_N",
+"a": [
+133.0,
+124.6
+],
+"b": [
+128.09,
+124.4
+],
+"w": 0.2,
+"layers": [
+"F.Cu",
+"In2.Cu"
+],
+"a_layers": [
+"F.Cu",
+"In2.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.2
+},
+{
+"net": "/RREF_P",
+"a": [
+128.09,
+118.6
+],
+"b": [
+131.875,
+116.67
+],
+"w": 0.2,
+"layers": [
+"F.Cu",
+"In2.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.2
+},
+{
+"net": "/RX_P",
+"a": [
+128.09,
+123.2
+],
+"b": [
+133.0,
+126.6
+],
+"w": 0.2,
+"layers": [
+"F.Cu",
+"In2.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu",
+"In2.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.2
+},
+{
+"net": "/RREF_N",
+"a": [
+137.325,
+116.67
+],
+"b": [
+128.09,
+119.8
+],
+"w": 0.2,
+"layers": [
+"F.Cu",
+"In2.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.2
+},
+{
+"net": "/RREF_P",
+"a": [
+128.09,
+118.6
+],
+"b": [
+119.0,
+127.11
+],
+"w": 0.2,
+"layers": [
+"F.Cu",
+"In2.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.2
+},
+{
+"net": "/FB",
+"a": [
+124.8,
+106.89
+],
+"b": [
+126.0,
+106.89
+],
+"w": 0.2,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.2
+},
+{
+"net": "/AIN1",
+"a": [
+129.375,
+125.8
+],
+"b": [
+129.11,
+124.4
+],
+"w": 0.2,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.2
+},
+{
+"net": "/VSET",
+"a": [
+117.6,
+118.375
+],
+"b": [
+116.2,
+118.11
+],
+"w": 0.2,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.2
+},
+{
+"net": "/VBAT_SENSE",
+"a": [
+116.2,
+102.11
+],
+"b": [
+115.52,
+103.1
+],
+"w": 0.15,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.15
+},
+{
+"net": "/AVDD",
+"a": [
+126.1,
+115.48
+],
+"b": [
+127.12,
+114.8
+],
+"w": 0.2,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.2
+},
+{
+"net": "/LED_A",
+"a": [
+123.11,
+110.9
+],
+"b": [
+123.3875,
+109.4
+],
+"w": 0.15,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.15
+},
+{
+"net": "/BOOT",
+"a": [
+114.4,
+135.89
+],
+"b": [
+112.275,
+135.925
+],
+"w": 0.15,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.15
+},
+{
+"net": "/AIN3",
+"a": [
+129.875,
+121.2
+],
+"b": [
+129.11,
+119.8
+],
+"w": 0.2,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.2
+},
+{
+"net": "/EN",
+"a": [
+106.11,
+119.0
+],
+"b": [
+105.12,
+120.2
+],
+"w": 0.15,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.15
+},
+{
+"net": "/AVDD",
+"a": [
+127.12,
+114.8
+],
+"b": [
+128.11,
+116.0
+],
+"w": 0.2,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.2
+},
+{
+"net": "/VBAT_SENSE",
+"a": [
+116.2,
+102.11
+],
+"b": [
+115.0,
+101.09
+],
+"w": 0.15,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.15
+},
+{
+"net": "/USB_DP",
+"a": [
+111.4625,
+128.55
+],
+"b": [
+113.7375,
+128.55
+],
+"w": 0.15,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.15
+},
+{
+"net": "/USB_DN",
+"a": [
+113.7375,
+126.65
+],
+"b": [
+111.4625,
+126.65
+],
+"w": 0.15,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.15
+},
+{
+"net": "/GATE",
+"a": [
+124.91,
+128.8
+],
+"b": [
+123.89,
+130.4
+],
+"w": 0.2,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.2
+},
+{
+"net": "/VSET",
+"a": [
+120.2,
+118.11
+],
+"b": [
+117.6,
+118.375
+],
+"w": 0.2,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.2
+},
+{
+"net": "/AIN2",
+"a": [
+129.11,
+118.6
+],
+"b": [
+128.325,
+121.2
+],
+"w": 0.2,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.2
+},
+{
+"net": "/AIN0",
+"a": [
+129.11,
+123.2
+],
+"b": [
+127.825,
+125.8
+],
+"w": 0.2,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.2
+},
+{
+"net": "/EN",
+"a": [
+105.675,
+135.925
+],
+"b": [
+101.525,
+135.925
+],
+"w": 0.15,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.15
+},
+{
+"net": "/BOOT",
+"a": [
+112.275,
+135.925
+],
+"b": [
+108.125,
+135.925
+],
+"w": 0.15,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.15
+},
+{
+"net": "/VSET",
+"a": [
+117.6,
+118.375
+],
+"b": [
+117.91,
+122.8
+],
+"w": 0.2,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.2
+},
+{
+"net": "/VSET",
+"a": [
+119.2,
+114.09
+],
+"b": [
+120.2,
+118.11
+],
+"w": 0.2,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.2
+},
+{
+"net": "/CHG_N",
+"a": [
+116.49,
+109.9
+],
+"b": [
+121.8125,
+109.4
+],
+"w": 0.15,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.15
+},
+{
+"net": "/GATE",
+"a": [
+124.91,
+128.8
+],
+"b": [
+129.835,
+131.01
+],
+"w": 0.2,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.2
+},
+{
+"net": "/EN",
+"a": [
+106.11,
+119.0
+],
+"b": [
+101.4,
+113.3
+],
+"w": 0.15,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.15
+},
+{
+"net": "/PULSE",
+"a": [
+105.7,
+116.6
+],
+"b": [
+114.9,
+115.11
+],
+"w": 0.15,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.15
+},
+{
+"net": "/USB_DN",
+"a": [
+113.2,
+114.9
+],
+"b": [
+113.7375,
+126.65
+],
+"w": 0.15,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.15
+},
+{
+"net": "/CHG_N",
+"a": [
+116.49,
+109.9
+],
+"b": [
+109.7,
+116.6
+],
+"w": 0.15,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.15
+},
+{
+"net": "/EN",
+"a": [
+105.12,
+120.2
+],
+"b": [
+105.675,
+135.925
+],
+"w": 0.15,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.15
+},
+{
+"net": "/BOOT",
+"a": [
+112.275,
+135.925
+],
+"b": [
+111.3,
+116.6
+],
+"w": 0.15,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.15
+},
+{
+"net": "/U0TX",
+"a": [
+113.2,
+110.9
+],
+"b": [
+113.0,
+132.8
+],
+"w": 0.15,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.15
+},
+{
+"net": "/U0RX",
+"a": [
+113.2,
+111.7
+],
+"b": [
+110.8,
+132.8
+],
+"w": 0.15,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.15
+},
+{
+"net": "/RANGE_A",
+"a": [
+101.4,
+111.7
+],
+"b": [
+115.8,
+121.11
+],
+"w": 0.15,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.15
+},
+{
+"net": "/USB_PG",
+"a": [
+119.85,
+108.91
+],
+"b": [
+103.3,
+116.6
+],
+"w": 0.15,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.15
+},
+{
+"net": "/VBAT_SENSE",
+"a": [
+115.52,
+103.1
+],
+"b": [
+102.5,
+116.6
+],
+"w": 0.15,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.15
+},
+{
+"net": "/ADS_CS",
+"a": [
+121.09,
+122.9
+],
+"b": [
+101.4,
+110.9
+],
+"w": 0.15,
+"layers": [
+"F.Cu",
+"In2.Cu",
+"B.Cu"
+],
+"a_layers": [
+"F.Cu"
+],
+"b_layers": [
+"F.Cu"
+],
+"end_free": 0.05,
+"via_d": 0.45,
+"via_drill": 0.2,
+"w_min": 0.15
+},
+{
+"net": "GND",
+"a": [
+124.8,
+107.91
+],
+"b": [
+124.8,
+107.91
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+124.48,
+107.64,
+125.12,
+108.18
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+124.88,
+116.4
+],
+"b": [
+124.88,
+116.4
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+124.6,
+116.09,
+125.16,
+116.71
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+119.0,
+101.09
+],
+"b": [
+119.0,
+101.09
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+118.68,
+100.82,
+119.32,
+101.36
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+129.9,
+111.0
+],
+"b": [
+129.9,
+111.0
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+129.65,
+110.75,
+130.15,
+111.25
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+126.1,
+114.52
+],
+"b": [
+126.1,
+114.52
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+125.79,
+114.24,
+126.41,
+114.8
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+129.55,
+107.6
+],
+"b": [
+129.55,
+107.6
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+129.05,
+106.875,
+130.05,
+108.325
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+101.6,
+118.825
+],
+"b": [
+101.6,
+118.825
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+101.125,
+118.375,
+102.075,
+119.275
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+116.2,
+101.09
+],
+"b": [
+116.2,
+101.09
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+115.88,
+100.82,
+116.52,
+101.36
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+117.9,
+101.09
+],
+"b": [
+117.9,
+101.09
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+117.58,
+100.82,
+118.22,
+101.36
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+124.8,
+103.825
+],
+"b": [
+124.8,
+103.825
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+124.325,
+103.375,
+125.275,
+104.275
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+115.5,
+107.19
+],
+"b": [
+115.5,
+107.19
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+115.18,
+106.92,
+115.82,
+107.46
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+110.4,
+121.69
+],
+"b": [
+110.4,
+121.69
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+110.08,
+121.42,
+110.72,
+121.96
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+101.4,
+107.7
+],
+"b": [
+101.4,
+107.7
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+101.0,
+107.5,
+101.8,
+107.9
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+101.4,
+108.5
+],
+"b": [
+101.4,
+108.5
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+101.0,
+108.3,
+101.8,
+108.7
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+101.4,
+115.7
+],
+"b": [
+101.4,
+115.7
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+101.0,
+115.5,
+101.8,
+115.9
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+104.1,
+116.6
+],
+"b": [
+104.1,
+116.6
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+103.9,
+116.2,
+104.3,
+117.0
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+112.1,
+106.8
+],
+"b": [
+112.1,
+106.8
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+111.9,
+106.4,
+112.3,
+107.2
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+111.3,
+106.8
+],
+"b": [
+111.3,
+106.8
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+111.1,
+106.4,
+111.5,
+107.2
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+110.5,
+106.8
+],
+"b": [
+110.5,
+106.8
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+110.3,
+106.4,
+110.7,
+107.2
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+109.7,
+106.8
+],
+"b": [
+109.7,
+106.8
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+109.5,
+106.4,
+109.9,
+107.2
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+108.9,
+106.8
+],
+"b": [
+108.9,
+106.8
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+108.7,
+106.4,
+109.1,
+107.2
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+108.1,
+106.8
+],
+"b": [
+108.1,
+106.8
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+107.9,
+106.4,
+108.3,
+107.2
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+107.3,
+106.8
+],
+"b": [
+107.3,
+106.8
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+107.1,
+106.4,
+107.5,
+107.2
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+106.5,
+106.8
+],
+"b": [
+106.5,
+106.8
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+106.3,
+106.4,
+106.7,
+107.2
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+105.7,
+106.8
+],
+"b": [
+105.7,
+106.8
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+105.5,
+106.4,
+105.9,
+107.2
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+104.9,
+106.8
+],
+"b": [
+104.9,
+106.8
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+104.7,
+106.4,
+105.1,
+107.2
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+104.1,
+106.8
+],
+"b": [
+104.1,
+106.8
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+103.9,
+106.4,
+104.3,
+107.2
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+103.3,
+106.8
+],
+"b": [
+103.3,
+106.8
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+103.1,
+106.4,
+103.5,
+107.2
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+102.5,
+106.8
+],
+"b": [
+102.5,
+106.8
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+102.3,
+106.4,
+102.7,
+107.2
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+113.25,
+106.75
+],
+"b": [
+113.25,
+106.75
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+112.9,
+106.4,
+113.6,
+107.1
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+113.25,
+116.65
+],
+"b": [
+113.25,
+116.65
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+112.9,
+116.3,
+113.6,
+117.0
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+101.35,
+116.65
+],
+"b": [
+101.35,
+116.65
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+101.0,
+116.3,
+101.7,
+117.0
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+101.35,
+106.75
+],
+"b": [
+101.35,
+106.75
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+101.0,
+106.4,
+101.7,
+107.1
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+111.4625,
+127.6
+],
+"b": [
+111.4625,
+127.6
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+110.8,
+127.3,
+112.125,
+127.9
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+122.08,
+124.4
+],
+"b": [
+122.08,
+124.4
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+121.8,
+124.09,
+122.36,
+124.71
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+117.48,
+112.4
+],
+"b": [
+117.48,
+112.4
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+117.2,
+112.09,
+117.76,
+112.71
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+116.2,
+104.425
+],
+"b": [
+116.2,
+104.425
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+115.725,
+103.975,
+116.675,
+104.875
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+108.18,
+124.4
+],
+"b": [
+108.18,
+124.4
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+107.605,
+124.1,
+108.755,
+124.7
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+108.18,
+130.8
+],
+"b": [
+108.18,
+130.8
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+107.605,
+130.5,
+108.755,
+131.1
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+108.18,
+130.8
+],
+"b": [
+108.18,
+130.8
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+107.605,
+130.5,
+108.755,
+131.1
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+108.18,
+124.4
+],
+"b": [
+108.18,
+124.4
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+107.605,
+124.1,
+108.755,
+124.7
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+123.0,
+104.225
+],
+"b": [
+123.0,
+104.225
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+122.525,
+103.775,
+123.475,
+104.675
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+116.48,
+103.1
+],
+"b": [
+116.48,
+103.1
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+116.2,
+102.79,
+116.76,
+103.41
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+124.4,
+119.6
+],
+"b": [
+124.4,
+119.6
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+123.33,
+118.53,
+125.47,
+120.67
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+120.1,
+101.09
+],
+"b": [
+120.1,
+101.09
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+119.78,
+100.82,
+120.42,
+101.36
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+116.2,
+117.09
+],
+"b": [
+116.2,
+117.09
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+115.88,
+116.82,
+116.52,
+117.36
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+123.4,
+108.11
+],
+"b": [
+123.4,
+108.11
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+123.08,
+107.84,
+123.72,
+108.38
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+103.0,
+119.12
+],
+"b": [
+103.0,
+119.12
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+102.69,
+118.84,
+103.31,
+119.4
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+111.8,
+121.69
+],
+"b": [
+111.8,
+121.69
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+111.48,
+121.42,
+112.12,
+121.96
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+117.4,
+132.8
+],
+"b": [
+117.4,
+132.8
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+116.9,
+132.3,
+117.9,
+133.3
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+124.91,
+130.4
+],
+"b": [
+124.91,
+130.4
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+124.64,
+130.08,
+125.18,
+130.72
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+121.3,
+101.12
+],
+"b": [
+121.3,
+101.12
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+120.99,
+100.84,
+121.61,
+101.4
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+101.525,
+138.075
+],
+"b": [
+101.525,
+138.075
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+101.0,
+137.75,
+102.05,
+138.4
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+105.675,
+138.075
+],
+"b": [
+105.675,
+138.075
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+105.15,
+137.75,
+106.2,
+138.4
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+128.08,
+114.8
+],
+"b": [
+128.08,
+114.8
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+127.8,
+114.49,
+128.36,
+115.11
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+117.6,
+116.825
+],
+"b": [
+117.6,
+116.825
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+117.125,
+116.375,
+118.075,
+117.275
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+115.8,
+120.09
+],
+"b": [
+115.8,
+120.09
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+115.48,
+119.82,
+116.12,
+120.36
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+114.9,
+114.09
+],
+"b": [
+114.9,
+114.09
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+114.58,
+113.82,
+115.22,
+114.36
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+106.08,
+120.2
+],
+"b": [
+106.08,
+120.2
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+105.8,
+119.89,
+106.36,
+120.51
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+108.125,
+138.075
+],
+"b": [
+108.125,
+138.075
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+107.6,
+137.75,
+108.65,
+138.4
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+},
+{
+"net": "GND",
+"a": [
+112.275,
+138.075
+],
+"b": [
+112.275,
+138.075
+],
+"w": 0.3,
+"layers": [
+"F.Cu"
+],
+"pad_bbox": [
+111.75,
+137.75,
+112.8,
+138.4
+],
+"a_layers": [
+"F.Cu"
+],
+"fanout": true,
+"via_d": 0.45,
+"via_drill": 0.2,
+"end_free": 0.05,
+"min_off": 0.0
+}
+]
+}

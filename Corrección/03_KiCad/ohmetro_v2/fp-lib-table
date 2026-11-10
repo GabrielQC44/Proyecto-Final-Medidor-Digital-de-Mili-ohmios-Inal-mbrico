@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "ohmetro")(type "KiCad")(uri "${KIPRJMOD}/ohmetro.pretty")(options "")(descr "Huellas propias del miliohmímetro"))
+)
