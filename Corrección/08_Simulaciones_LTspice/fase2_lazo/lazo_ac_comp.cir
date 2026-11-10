@@ -1,0 +1,26 @@
+* Fase 2 - Lazo v2 con compensacion: RFB (sensado -> IN-) + CF (salida -> IN-) + RG (compuerta)
+.include ../modelos/opa376/OPAx376.LIB
+.model IRLHM620 VDMOS(Rg=2.6 Vto=1 Rd=0.15m Rs=0.1m Rb=2.5m Kp=160 Cgdmax=4n Cgdmin=2.5n Cgs=1.75n Cjo=0.8n Is=700p ksubthres=.1 mfg=International_Rectifier Vds=20 Ron=2m Qg=52n)
+.param RX=0.1 VS=97m RG=470 CF=4.7n RFB=1k VBAT=3.7 RSHV=0.1
+V3V3 3v3 0 3.3
+VBT bat 0 {VBAT}
+RESR bat vsys 0.15
+CBULK vsys 0 40u
+VSET vset 0 {VS}
+XU1 vset inn 3v3 0 opout OPAx376
+RG1 opout gate {RG}
+RG2 gate 0 100k
+CF1 opout inn {CF}
+RFB1 x inn {RFB}
+M1 vsys gate fp fp IRLHM620
+RLF1 fp fpk 0.07
+RXX fpk fnk {RX}
+RLF2 fnk sh 0.07
+RSH sh 0 {RSHV}
+VINJ x y AC 1
+RKS sh y 0.01
+.ac dec 100 10 100Meg
+.step param CF list 1n 4.7n 10n
+.step param RX list 0.0005 1
+.save V(x) V(y)
+.end

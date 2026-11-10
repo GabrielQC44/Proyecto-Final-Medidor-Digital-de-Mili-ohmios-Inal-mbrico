@@ -1,0 +1,99 @@
+LTspice 26.0.2 for Windows
+Circuit: D:\U\Claude\Proyecto Diseño\v2\simulaciones\fase2_lazo\pulso_tran.cir
+Start Time: Mon Nov  9 14:55:55 2026
+
+.step modo=1
+solver = Normal
+Maximum thread count: 12
+tnom = 27
+temp = 27
+method = trap
+AsciiRawFile = true
+Direct Newton iteration failed to find operating point.
+Starting Gmin stepping
+Gmin stepping failed to find operating point. Use".option gminsteps=0" to skip all Gmin stepping.
+Starting source stepping with srcstepmethod=0
+Starting source stepping with srcstepmethod=1
+Source stepping failed to find operating point. Use ".options srcsteps=0" to skip all source stepping.
+Starting Gmin stepping level 2
+Gmin stepping level 2 failed to find operating point. Use".option gminsteps=0" to skip all Gmin stepping.
+Starting source stepping with srcstepmethod=1, level 2
+Starting source stepping with srcstepmethod=0, level 2
+Source stepping level 2 failed to find operating point. Use ".options srcsteps=0" to skip all source stepping.
+Pseudo Transient succeeded in finding the operating point at 3.99942 s
+
+.step modo=2
+Direct Newton iteration failed to find operating point.
+Starting Gmin stepping
+Gmin stepping failed to find operating point. Use".option gminsteps=0" to skip all Gmin stepping.
+Starting source stepping with srcstepmethod=0
+Starting source stepping with srcstepmethod=1
+Source stepping failed to find operating point. Use ".options srcsteps=0" to skip all source stepping.
+Starting Gmin stepping level 2
+Gmin stepping level 2 failed to find operating point. Use".option gminsteps=0" to skip all Gmin stepping.
+Starting source stepping with srcstepmethod=1, level 2
+Starting source stepping with srcstepmethod=0, level 2
+Source stepping level 2 failed to find operating point. Use ".options srcsteps=0" to skip all source stepping.
+Pseudo Transient succeeded in finding the operating point at 7.48472 s
+
+.step modo=3
+Direct Newton iteration failed to find operating point.
+Starting Gmin stepping
+Gmin stepping failed to find operating point. Use".option gminsteps=0" to skip all Gmin stepping.
+Starting source stepping with srcstepmethod=0
+Starting source stepping with srcstepmethod=1
+Source stepping failed to find operating point. Use ".options srcsteps=0" to skip all source stepping.
+Starting Gmin stepping level 2
+Gmin stepping level 2 failed to find operating point. Use".option gminsteps=0" to skip all Gmin stepping.
+Starting source stepping with srcstepmethod=1, level 2
+Starting source stepping with srcstepmethod=0, level 2
+Source stepping level 2 failed to find operating point. Use ".options srcsteps=0" to skip all source stepping.
+Pseudo Transient succeeded in finding the operating point at 6.94564 s
+Total elapsed time: 22.527 seconds.
+
+Files loaded:
+D:\U\Claude\Proyecto Diseño\v2\simulaciones\fase2_lazo\pulso_tran.cir
+D:\U\Claude\Proyecto Diseño\v2\simulaciones\modelos\opa376\OPAx376.LIB
+
+
+Measurement: imed
+  step	AVG(I(RSH) )	FROM	TO
+     1	0.970862756128	0.03	0.055
+     2	0.487071591725	0.03	0.055
+     3	0.0954843225612	0.03	0.055
+
+Measurement: vsetm
+  step	AVG(V(vset) )	FROM	TO
+     1	0.0970588306403	0.03	0.055
+     2	0.048676760927	0.03	0.055
+     3	0.00951567572721	0.03	0.055
+
+Measurement: ipico
+  step	MAX(I(RSH) )	FROM	TO
+     1	0.970862710254	0.002	0.01
+     2	0.488077454955	0.002	0.01
+     3	0.0954843163992	0.002	0.01
+
+Measurement: tset
+  step	I(RSH)=0.99*IMED 
+     1	0.00204783564148
+     2	0.00203198306347
+     3	0.0021129319509
+
+Measurement: vgmax
+  step	MAX(V(gate) )	FROM	TO
+     1	1.39995677115	0.002	0.057
+     2	1.23168194382	0.002	0.057
+     3	1.02989837558	0.002	0.057
+
+Measurement: vdsmin
+  step	MIN(V(vsys,fp) )	FROM	TO
+     1	3.22427724143	0.03	0.055
+     2	3.41262775937	0.03	0.055
+     3	3.56727678888	0.03	0.055
+
+Measurement: pq
+  step	AVG((V(vsys)-V(fp))*I(RSH) )	FROM	TO
+     1	3.13033069697	0.03	0.055
+     2	1.66219403546	0.03	0.055
+     3	0.340619007839	0.03	0.055

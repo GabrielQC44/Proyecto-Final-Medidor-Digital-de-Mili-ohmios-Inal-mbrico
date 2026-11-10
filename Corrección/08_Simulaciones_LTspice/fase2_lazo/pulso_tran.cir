@@ -1,0 +1,40 @@
+* Fase 2 - Transitorio de un pulso de medicion (55 ms) en los 3 rangos, red VSET completa
+* Rangos: MODO=1 -> 1 A (sin atenuar), MODO=2 -> 0.5 A (RA conectado), MODO=3 -> 0.1 A (RB conectado)
+.include ../modelos/opa376/OPAx376.LIB
+.model IRLHM620 VDMOS(Rg=2.6 Vto=1 Rd=0.15m Rs=0.1m Rb=2.5m Kp=160 Cgdmax=4n Cgdmin=2.5n Cgs=1.75n Cjo=0.8n Is=700p ksubthres=.1 mfg=International_Rectifier Vds=20 Ron=2m Qg=52n)
+.param MODO=1 VBAT=3.7 RON=0.5
+.param RX=if(MODO==1,0.1,if(MODO==2,0.2,1))
+.param RAEFF=if(MODO==2,976+RON,1e12) RBEFF=if(MODO==3,105+RON,1e12)
+V3V3 3v3 0 3.3
+VBT bat 0 {VBAT}
+RESR bat vsys 0.15
+CBULK vsys 0 40u
+* buffer 74LVC1G125 (salida rail-to-rail), pulso de 55 ms
+VBUF bufy 0 PULSE(0 3.3 2m 1u 1u 55m 200m 1)
+RDV bufy vset 33k
+RST vset 0 1k
+RA vset 0 {RAEFF}
+RB vset 0 {RBEFF}
+CST vset 0 10n
+XU1 vset inn 3v3 0 opout OPAx376
+RG1 opout gate 470
+RG2 gate 0 100k
+CF1 opout inn 1n
+RFB1 shk inn 1k
+M1 vsys gate fp fp IRLHM620
+RLF1 fp fpk 0.07
+RXX fpk fnk {RX}
+RLF2 fnk sh 0.07
+RSH sh 0 0.1
+RKS sh shk 0.01
+.tran 0 70m 0 2u
+.step param MODO list 1 2 3
+.meas TRAN IMED AVG I(RSH) FROM 30m TO 55m
+.meas TRAN VSETM AVG V(vset) FROM 30m TO 55m
+.meas TRAN IPICO MAX I(RSH) FROM 2m TO 10m
+.meas TRAN TSET WHEN I(RSH)=0.99*IMED RISE=1
+.meas TRAN VGMAX MAX V(gate) FROM 2m TO 57m
+.meas TRAN VDSMIN MIN V(vsys,fp) FROM 30m TO 55m
+.meas TRAN PQ AVG (V(vsys)-V(fp))*I(RSH) FROM 30m TO 55m
+.save I(RSH) V(vset) V(gate) V(vsys) V(fp) V(opout)
+.end

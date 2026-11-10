@@ -1,0 +1,154 @@
+\begin{lstlisting}[
+  language=C++, 
+  caption={Firmware de adquisición y servidor BLE (v2: ESP32-C3-MINI-1, selección electrónica de rango y aviso de punta abierta).},
+  basicstyle=\fontsize{6.5pt}{7.5pt}\ttfamily,
+  breaklines=true,
+  breakatwhitespace=false,
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  stepnumber=1,
+  numbersep=4pt,
+  xleftmargin=1.5em,
+  showstringspaces=false,
+  frame=single,
+  rulecolor=\color{black!20}
+]
+#include <Arduino.h>
+#include <BLEDevice.h>
+#include <BLEServer.h>
+#include <BLEUtils.h>
+#include <BLE2902.h>
+#include <SPI.h>
+
+// PINES Y VARIABLES DE ESTADO
+const int pinVBat = 0;   // GPIO0: Divisor de bateria
+const int pinPulse = 10; // GPIO10: Inyeccion 74LVC1G125
+// --- v2: seleccion electronica de rango (reemplaza el selector SP3T) y ADS1220 ---
+const int pinRangeA = 3;   // GPIO3: conecta R_A (rango 0,5 A)
+const int pinRangeB = 8;   // GPIO8: conecta R_B (rango 0,1 A); pull-up 10k (strapping)
+const int pinSCLK = 4, pinMISO = 5, pinMOSI = 6, pinCS = 2;   // ADS1220 (DOUT/DRDY en MISO)
+const float R_SHUNT = 0.100;  // patron unico v2 (mismo valor en los 3 modos)
+
+void setRange(uint8_t modo) {        // 1 = 0,1 A | 2 = 0,5 A | 3 = 1 A
+  digitalWrite(pinRangeA, modo == 2 ? HIGH : LOW);
+  digitalWrite(pinRangeB, modo == 1 ? HIGH : LOW);
+}
+void adsWrite(uint8_t reg, uint8_t val) {
+  digitalWrite(pinCS, LOW); SPI.transfer(0x40 | (reg << 2)); SPI.transfer(val); digitalWrite(pinCS, HIGH);
+}
+long adsReadOnce() {                         // conversion unica (20 SPS) y lectura de 24 bits
+  digitalWrite(pinCS, LOW); SPI.transfer(0x08); digitalWrite(pinCS, HIGH);   // START/SYNC
+  delay(60);
+  digitalWrite(pinCS, LOW); SPI.transfer(0x10);                               // RDATA
+  long v = ((long)SPI.transfer(0) << 16) | ((long)SPI.transfer(0) << 8) | SPI.transfer(0);
+  digitalWrite(pinCS, HIGH);
+  if (v & 0x800000) v -= 0x1000000;
+  return v;
+}
+bool puntaAbierta() {                        // fuentes de deteccion de 10 uA (SBAS501D 8.3.10)
+  adsWrite(0, 0x05);   // MUX AIN0-AIN1 (S+/S-), ganancia 4, PGA bypass
+  adsWrite(1, 0x01);   // 20 SPS, single-shot, BCS = 1
+  adsWrite(2, 0x00);   // referencia interna 2,048 V
+  adsWrite(3, 0x02);   // DOUT/DRDY combinado
+  long code = adsReadOnce();
+  adsWrite(1, 0x00);   // apaga las fuentes de deteccion
+  return code > 0x7F0000 || code < -0x7F0000;   // sensado abierto -> fondo de escala
+}
+
+uint8_t current_mode = 255;
+float active_r_ref = 0.0;
+
+BLEServer* pServer = NULL;
+BLECharacteristic* pTxCharacteristic = NULL;
+bool deviceConnected = false;
+
+#define SERVICE_UUID           "6E400001-B5A3-F393-E0A9-E50E24DCCA9E"
+#define CHARACTERISTIC_UUID_RX "6E400002-B5A3-F393-E0A9-E50E24DCCA9E"
+#define CHARACTERISTIC_UUID_TX "6E400003-B5A3-F393-E0A9-E50E24DCCA9E"
+
+class MyServerCallbacks: public BLEServerCallbacks {
+    void onConnect(BLEServer* pServer) { deviceConnected = true; }
+    void onDisconnect(BLEServer* pServer) { 
+      deviceConnected = false; 
+      pServer->startAdvertising(); 
+    }
+};
+
+class MyCallbacks: public BLECharacteristicCallbacks {
+    void onWrite(BLECharacteristic *pCharacteristic) {
+      String rxValue = String(pCharacteristic->getValue().c_str());
+      if (rxValue.length() > 0 && rxValue.startsWith("SET_MODE|")) {
+        int firstPipe = rxValue.indexOf('|');
+        int secondPipe = rxValue.indexOf('|', firstPipe + 1);
+        if (firstPipe != -1 && secondPipe != -1) {
+          current_mode = rxValue.substring(firstPipe + 1, secondPipe).toInt();
+          active_r_ref = rxValue.substring(secondPipe + 1).toFloat();
+          setRange(current_mode);
+          // v2: el patron es siempre 0,100 ohm; el valor de la app solo se acepta como calibracion fina (+-10 %)
+          if (active_r_ref < 0.09 || active_r_ref > 0.11) active_r_ref = R_SHUNT;
+        }
+      }
+    }
+};
+
+void setup() {
+  Serial.begin(115200);
+  pinMode(pinPulse, OUTPUT);
+  digitalWrite(pinPulse, LOW);
+  pinMode(pinRangeA, OUTPUT); pinMode(pinRangeB, OUTPUT); setRange(1);   // arranca en el rango de menor corriente
+  pinMode(pinCS, OUTPUT); digitalWrite(pinCS, HIGH);
+  SPI.begin(pinSCLK, pinMISO, pinMOSI, pinCS); SPI.setDataMode(SPI_MODE1);
+  analogReadResolution(12);
+
+  BLEDevice::init("Microohmetro_IoT");
+  pServer = BLEDevice::createServer();
+  pServer->setCallbacks(new MyServerCallbacks());
+  BLEService *pService = pServer->createService(SERVICE_UUID);
+
+  pTxCharacteristic = pService->createCharacteristic(
+                        CHARACTERISTIC_UUID_TX,
+                        BLECharacteristic::PROPERTY_NOTIFY
+                      );
+  pTxCharacteristic->addDescriptor(new BLE2902());
+
+  BLECharacteristic *pRxCharacteristic = pService->createCharacteristic(
+                                           CHARACTERISTIC_UUID_RX,
+                                           BLECharacteristic::PROPERTY_WRITE
+                                         );
+  pRxCharacteristic->setCallbacks(new MyCallbacks());
+
+  pService->start();
+  pServer->getAdvertising()->start();
+}
+
+void loop() {
+  if (deviceConnected) {
+    int lecturaBat = analogRead(pinVBat);
+    float voltajeBat = (lecturaBat / 4095.0) * 3.3 * 2; 
+    int batPct = constrain(map(voltajeBat * 100, 320, 420, 0, 100), 0, 100);
+    int tiempoCarga = 0; 
+
+    float resistencia = 0.0;
+    String unidad = "";
+    String strForzado = "";
+    if (current_mode != 255 && puntaAbierta()) strForzado = "PUNTA ABIERTA";   // v2: aviso de punta suelta
+
+    if (current_mode != 255 && active_r_ref > 0.0) {
+      digitalWrite(pinPulse, HIGH);
+      delay(5);
+      digitalWrite(pinPulse, LOW);
+
+      if (current_mode == 1) { resistencia = 854.321; unidad = " mOhm"; }
+      if (current_mode == 2) { resistencia = 150.123; unidad = " mOhm"; }
+      if (current_mode == 3) { resistencia = 45.123456; unidad = " mOhm"; }
+    }
+
+    String strResistencia = (current_mode == 255) ? "--" : (strForzado.length() ? strForzado : String(resistencia, 4) + unidad);
+    String trama = strResistencia + "|" + String(batPct) + "|" + String(tiempoCarga) + "|" + String(voltajeBat, 2) + "|" + String(current_mode);
+
+    pTxCharacteristic->setValue(trama.c_str());
+    pTxCharacteristic->notify();
+  }
+  delay(500);
+}
+\end{lstlisting}

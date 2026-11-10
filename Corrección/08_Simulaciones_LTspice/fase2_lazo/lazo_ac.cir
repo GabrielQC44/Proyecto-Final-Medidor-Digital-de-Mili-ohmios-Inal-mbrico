@@ -1,0 +1,27 @@
+* Fase 2 - Estabilidad del lazo de corriente v2 (OPA376 + IRLHM620), inyeccion de Middlebrook
+* Parametros: modo (VSET), RX, VSYS
+.include ../modelos/opa376/OPAx376.LIB
+.model IRLHM620 VDMOS(Rg=2.6 Vto=1 Rd=0.15m Rs=0.1m Rb=2.5m Kp=160 Cgdmax=4n Cgdmin=2.5n Cgs=1.75n Cjo=0.8n Is=700p ksubthres=.1 mfg=International_Rectifier Vds=20 Ron=2m Qg=52n)
+.param RX=0.1 VS=97m RG=470 CF=33p VBAT=3.7
+V3V3 3v3 0 3.3
+VBT bat 0 {VBAT}
+RESR bat vsys 0.15
+CBULK vsys 0 40u
+* fuente VSET ideal en continua (punto de operacion) - la red RC se simula en transitorio
+VSET vset 0 {VS}
+XU1 vset x 3v3 0 opout OPAx376
+RG1 opout gate {RG}
+RG2 gate 0 100k
+CF1 opout x {CF}
+M1 vsys gate fp fp IRLHM620
+RLF1 fp fpk 0.07
+RXX fpk fnk {RX}
+RLF2 fnk sh 0.07
+RSH sh 0 0.1
+* inyeccion entre el nodo Kelvin del shunt (y) y la entrada inversora (x)
+VINJ x y AC 1
+RKS sh y 0.01
+.ac dec 100 10 100Meg
+.step param RX list 0.0005 0.1 1
+.save V(x) V(y) I(RSH)
+.end

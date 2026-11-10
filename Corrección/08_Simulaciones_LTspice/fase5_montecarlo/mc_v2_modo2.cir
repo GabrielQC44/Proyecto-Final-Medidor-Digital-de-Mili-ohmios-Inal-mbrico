@@ -1,0 +1,74 @@
+* Monte Carlo v2 - modo 2 (0,5 A), RX exacta = 0.1 ohm, 500 corridas
+.include ../modelos/opa376/OPAx376.LIB
+.model IRLHM620 VDMOS(Rg=2.6 Vto=1 Rd=0.15m Rs=0.1m Rb=2.5m Kp=160 Cgdmax=4n Cgdmin=2.5n Cgs=1.75n Cjo=0.8n Is=700p ksubthres=.1 mfg=International_Rectifier Vds=20 Ron=2m Qg=52n)
+.param MODO=2 RX=0.1
+.param T1=0.001 T3=0.000333 TG=0.000333
+.param RSHV={0.1*(1+gauss(T1/3))} RDVV={33k*(1+gauss(0.01/3))} RSTV={1k*(1+gauss(0.01/3))}
+.param RAV={976*(1+gauss(0.01/3))} RBV={105*(1+gauss(0.01/3))} RFBV={1k*(1+gauss(0.01/3))}
+.param RGV={470*(1+gauss(0.01/3))} RG2V={100k*(1+gauss(0.01/3))} RONV={flat(0.15)+0.55}
+.param RA1={1k*(1+gauss(T1/3))} RA2={1k*(1+gauss(T1/3))} RA3={1k*(1+gauss(T1/3))} RA4={1k*(1+gauss(T1/3))}
+.param CSTV={10n*(1+gauss(0.05/3))} CFV={1n*(1+gauss(0.05/3))} CA1={10n*(1+gauss(0.05/3))} CA2={10n*(1+gauss(0.05/3))}
+.param VOS={gauss(25u/3)} ADCOFF={gauss(4u/3)} ADCGAIN={1+gauss(0.0005/3)}
+.param RAEFF={if(MODO==2,RAV+RONV,1e12)} RBEFF={if(MODO==1,RBV+RONV,1e12)}
+V3V3 3v3 0 3.3
+VBT bat 0 3.7
+RESR bat vsys 0.15
+CBULK vsys 0 40u
+VBUF bufy 0 PULSE(0 3.3 0.5m 1u 1u 2.6m 10m 1)
+RDV bufy vset {RDVV}
+RST vset 0 {RSTV}
+RA vset 0 {RAEFF}
+RB vset 0 {RBEFF}
+CST vset 0 {CSTV}
+VOFFS vsetp vset {VOS}
+XU1 vsetp inn 3v3 0 opout OPAx376
+RG1 opout gate {RGV}
+RG2 gate 0 {RG2V}
+CF1 opout inn {CFV}
+RFB1 shp inn {RFBV}
+M1 vsys gate fp fp IRLHM620
+* puntas: fuerza con resistencia de cable/contacto; sensado Kelvin directo sobre RX
+RLF1 fp fpk 0.07
+RXX fpk fnk {RX}
+RLF2 fnk shi1 0.07
+* shunt de 4 terminales: I1-I2 por la corriente; E1/E2 (sensado) en los extremos del elemento
+RSH shp shn {RSHV}
+RI1 shi1 shp 1m
+RI2 shn 0 1m
+* filtros RC de entrada del ADC (RADS 1k 0,1 % + CADS 10n diferencial)
+RADS1 fpk ain0 {RA1}
+RADS2 fnk ain1 {RA2}
+CADS1 ain0 ain1 {CA1}
+RADS3 shp ain2 {RA3}
+RADS4 shn ain3 {RA4}
+CADS2 ain2 ain3 {CA2}
+* corriente de entrada del ADS1220 (PGA deshabilitado): se modela 2 nA por pin
+IB0 ain0 0 2n
+IB1 ain1 0 2n
+IB2 ain2 0 2n
+IB3 ain3 0 2n
+.tran 0 3.2m 0 2u startup
+.step param run 1 500 1
+.meas TRAN VXOFF AVG V(ain0,ain1) FROM 0.30m TO 0.45m
+.meas TRAN VROFF AVG V(ain2,ain3) FROM 0.30m TO 0.45m
+.meas TRAN VXON AVG V(ain0,ain1) FROM 2.0m TO 3.0m
+.meas TRAN VRON AVG V(ain2,ain3) FROM 2.0m TO 3.0m
+.meas TRAN IMED AVG I(RXX) FROM 2.0m TO 3.0m
+.meas TRAN VSETM AVG V(vset) FROM 2.0m TO 3.0m
+.meas TRAN RATIO PARAM ((VXON+ADCOFF)*ADCGAIN-(VXOFF+ADCOFF)*ADCGAIN)/((VRON+ADCOFF)*ADCGAIN-(VROFF+ADCOFF)*ADCGAIN)
+.meas TRAN RXMED PARAM 0.1*RATIO
+.meas TRAN PRSH PARAM RSHV
+.meas TRAN PRDV PARAM RDVV
+.meas TRAN PRST PARAM RSTV
+.meas TRAN PRA PARAM RAV
+.meas TRAN PRB PARAM RBV
+.meas TRAN PRFB PARAM RFBV
+.meas TRAN PRA1 PARAM RA1
+.meas TRAN PRA2 PARAM RA2
+.meas TRAN PRA3 PARAM RA3
+.meas TRAN PRA4 PARAM RA4
+.meas TRAN PVOS PARAM VOS
+.meas TRAN PRON PARAM RONV
+.save I(RXX) V(vset) V(ain0) V(ain1) V(ain2) V(ain3) V(gate)
+.options plotwinsize=0 numdgt=7
+.end
